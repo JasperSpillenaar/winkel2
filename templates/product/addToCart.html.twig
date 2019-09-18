@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+    <h1>Shopping Cart</h1>
+    {% for product in product %}
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ product[2].naam }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ product[2].prijs }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ product[2].beschrijving }}</td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ product[1] }}</td>
+            </tr>
+            </tbody>
+        </table>
+    {% endfor %}
+
+    <p>Totaal prijs : {{ totaal }}</p>
+    <a href="/checkout">Checkout</a>
+{% endblock %}
